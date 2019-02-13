@@ -74,7 +74,7 @@ app.use(helmet());
 // the model's instances represent individual documents
 // which can be saved and retrieved
 const mongoose = require('mongoose');
-const mongoDB = 'mongodb://jeannie:shittypassword1@ds233500.mlab.com:33500/sandbox_local_library';
+const mongoDB = process.env.MONGODB_URI || 'mongodb://jeannie:shittypassword1@ds233500.mlab.com:33500/sandbox_local_library';
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
 const db = mongoose.connection;
